@@ -154,26 +154,26 @@ def scaleCoords(x, y, scuffed = True):
 # • dies to internet if there is collection event
 # • no rng at all
 # 
-# Start a easy standard game on dark castle, then run script
+# run script on home page
 # it will automatically start game and beat it repeatedly
 def darkCastleEasy(): 
     time.sleep(1)
     while (1): # start new games
         print('starting game')
         pyautogui.click(scaleCoords(400, 400)) # focus
-        time.sleep(0.1)
+        time.sleep(0.2)
         pyautogui.click(scaleCoords(380, 750)) # play
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(40, 380)) # search button
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(390, 320)) # search bar
-        time.sleep(0.2)
+        time.sleep(0.5)
         pyautogui.typewrite('dark castle')
-        time.sleep(0.2)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(230, 460)) # dark castle
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(270, 500)) # easy
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(300, 580)) # standard
         time.sleep(5)
         s1 = [680,590] # position of sniper 1 on screen (full auto sniper)
@@ -268,19 +268,19 @@ def infernalChimps():
     while (1): # start new games
         print('starting game')
         pyautogui.click(scaleCoords(400, 400)) # focus
-        time.sleep(0.1)
+        time.sleep(0.2)
         pyautogui.click(scaleCoords(380, 750)) # play
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(40, 380)) # search button
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(390, 320)) # search bar
-        time.sleep(0.2)
+        time.sleep(0.5)
         pyautogui.typewrite('infernal')
-        time.sleep(0.2)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(230, 460)) # infernal
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(600, 500)) # hard
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(760, 660)) # chimps
         time.sleep(5)
         pyautogui.click(scaleCoords(440, 660)) # ok
@@ -408,7 +408,8 @@ def infernalChimps():
 
 # Infernal easy monkey money farm, collection event grinder
 # • full automatic
-# • same stats as dark castle farm
+# • approx 600 MM / hour
+# • approx 40 tokens / hour
 # • psi hero used
 # • mk used
 # • automatic error handling (level up, unfocused window)
@@ -422,19 +423,19 @@ def infernalEasy():
     while (1): # start new games
         print('starting game')
         pyautogui.click(scaleCoords(400, 400)) # focus
-        time.sleep(0.1)
+        time.sleep(0.2)
         pyautogui.click(scaleCoords(380, 750)) # play
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(40, 380)) # search button
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(390, 320)) # search bar
-        time.sleep(0.2)
+        time.sleep(0.5)
         pyautogui.typewrite('infernal')
-        time.sleep(0.2)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(230, 460)) # infernal
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(270, 500)) # easy
-        time.sleep(0.3)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(300, 580)) # standard
         time.sleep(5)
         psi = [214,417]
