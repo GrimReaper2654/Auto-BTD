@@ -21,6 +21,13 @@ class keybinds(): # change based on your own keybinds
         self.alchemist = 'a'
         self.spikeFactory = 'x'
         self.bombShooter = 'b'
+        self.mermonkey = 'm'
+
+        self.display = { # set your btd6 screen position with 2 corner coordinates 
+            "upperLeft": [0,295],
+            "lowerRight": [891,824]
+        }
+
 
 data = keybinds()
 
@@ -132,10 +139,10 @@ def checkComplete():
         return True
     return False
 
-def scaleCoords(x, y, scuffed = True):
+def scaleCoords(x, y, scuffed = True): 
     # your btd6 display size (change to fit your screen)
-    upperLeft = [0,295]
-    lowerRight = [891,824]
+    upperLeft = data.display['upperLeft']
+    lowerRight = data.display['lowerRight']
     # settings (DO NOT TOUCH)
     defaultUpperLeft = [0,295]
     defaultLowerRight = [891,824]
@@ -194,7 +201,7 @@ def darkCastleEasy():
             {'type': 'u', 'key': '1', 'cost': -1, 'pos': s2},
             {'type': 'u', 'key': '1', 'cost': -1, 'pos': s2},
             {'type': 'u', 'key': '1', 'cost': -1, 'pos': s2},
-            ]
+        ]
         print('Initialising...')
         time.sleep(0.5)
         pyautogui.click(scaleCoords(400, 500))
@@ -515,9 +522,4 @@ def infernalEasy():
             else:
                 time.sleep(1)
 
-
 darkCastleEasy()
-
-'''
-
-            '''
