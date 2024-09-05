@@ -104,7 +104,11 @@ strats = {
     "valley": {
         "sub": [875, 200],
         "boat": [940, 800]
-    }
+    },
+    "infernal": {
+        "sniper1": [1490, 545],
+        "sniper2": [1490, 645]
+    },
 }
 strats["bloody"]["actions"] = [
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["bloody"]["sub1"]},
@@ -365,6 +369,24 @@ strats["valley"]["actions"] = [
     {'type': 'u', 'key': '2', 'pos': strats["valley"]['boat']},
     {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
 ]
+strats["infernal"]["actions"] = [
+    {'type': 'start'},
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["infernal"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["infernal"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["infernal"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["infernal"]["sniper1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]}
+]
+
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -569,6 +591,11 @@ def grindCollectionEvent():
                 print('Playing Flooded Valley')
                 actions = copy.deepcopy(strats["valley"]["actions"])
                 break
+            elif 'infernal' in map:
+                print('Playing Infernal')
+                actions = copy.deepcopy(strats["infernal"]["actions"])
+                break
+
 
 
             print('map not found, trying again')
@@ -603,5 +630,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["valley"]["actions"])
+game(strats["infernal"]["actions"])
 #grindCollectionEvent()
