@@ -65,6 +65,10 @@ strats = {
         "sniper1": [950, 520],
         "sniper2": [885, 520]
     },
+    "castle": {
+        "sniper1": [1365, 535],
+        "sniper2": [1365, 620]
+    },
 }
 strats["bloody"]["actions"] = [
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["bloody"]["sub1"]},
@@ -179,6 +183,23 @@ strats['workshop']["actions"] = [
     {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
     {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
     {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]}
+]
+strats['castle']["actions"] = [
+    {'type': 'start', 'cost': 0},
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]}
 ]
 
 
@@ -353,9 +374,17 @@ def grindCollectionEvent():
                 print('Playing Ravine')
                 actions = copy.deepcopy(strats["ravine"]["actions"])
                 break
+            elif 'castle' in map:
+                print('Playing Dark Castle')
+                actions = copy.deepcopy(strats["castle"]["actions"])
+                break
             elif 'dark' in map:
                 print('Playing Dark Dungeons')
                 actions = copy.deepcopy(strats["dungeon"]["actions"])
+                break
+            elif 'work' in map:
+                print('Playing Workshop')
+                actions = copy.deepcopy(strats["workshop"]["actions"])
                 break
 
             print('map not found, trying again')
@@ -390,5 +419,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["workshop"]["actions"])
+game(strats["castle"]["actions"])
 #grindCollectionEvent()
