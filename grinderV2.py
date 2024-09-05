@@ -100,6 +100,10 @@ strats = {
         "dart1": [490, 340],
         "boat1": [675, 625],
         "boat2": [890, 510],
+    },
+    "valley": {
+        "sub": [875, 200],
+        "boat": [940, 800]
     }
 }
 strats["bloody"]["actions"] = [
@@ -344,6 +348,23 @@ strats["ouch"]["actions"] = [
     {'type': 'u', 'key': '3', 'pos': strats["ouch"]['sub1']},
     {'type': 'u', 'key': '2', 'pos': strats["ouch"]["boat1"]},
 ]
+strats["valley"]["actions"] = [
+    {'type': 'start'},
+    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["valley"]["sub"]},
+    {'type': 'p', 'key': data.boat, 'cost': 260, 'pos': strats["valley"]["boat"]},
+    {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
+    {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
+    {'type': 'u', 'key': '1', 'pos': strats["valley"]['sub']},
+    {'type': 'u', 'key': '1', 'pos': strats["valley"]['sub']},
+    {'type': 'u', 'key': '3', 'pos': strats["valley"]['boat']},
+    {'type': 'u', 'key': '3', 'pos': strats["valley"]['boat']},
+    {'type': 'u', 'key': '2', 'pos': strats["valley"]['boat']},
+    {'type': 'u', 'key': '2', 'pos': strats["valley"]['boat']},
+    {'type': 'u', 'key': '2', 'pos': strats["valley"]['boat']},
+    {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
+    {'type': 'u', 'key': '2', 'pos': strats["valley"]['boat']},
+    {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
+]
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -544,6 +565,10 @@ def grindCollectionEvent():
                 print('Playing #Ouch')
                 actions = copy.deepcopy(strats["ouch"]["actions"])
                 break
+            elif 'valley' in map:
+                print('Playing Flooded Valley')
+                actions = copy.deepcopy(strats["valley"]["actions"])
+                break
 
 
             print('map not found, trying again')
@@ -578,5 +603,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["ouch"]["actions"])
+game(strats["valley"]["actions"])
 #grindCollectionEvent()
