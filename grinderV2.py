@@ -523,15 +523,18 @@ def game(actions):
                 time.sleep(0.5)
             else: # place towers
                 # get money
-                raw = ocr([335, 60], [450, 100])
-                cash = ''
-                for char in raw:
-                    if char.isnumeric():
-                        cash += char
-                if cash != '':
-                    cash = int(cash)
+                if (action['cost'] > 0):
+                    raw = ocr([335, 60], [450, 100])
+                    cash = ''
+                    for char in raw:
+                        if char.isnumeric():
+                            cash += char
+                    if cash != '':
+                        cash = int(cash)
+                    else:
+                        print('failed to detect money')
+                    cash = 0
                 else:
-                    print('failed to detect money')
                     cash = 0
 
                 if (cash >= action['cost']):
@@ -549,24 +552,23 @@ def game(actions):
 # • mk used
 # • automatic error handling (level up, unfocused window)
 # • dies to internet if there is collection event
-# • idk if there is rng, probably none
+# • minimal rng (does not require babysitting)
 # 
 # run script on home page
 # it will automatically start games and beat it repeatedly
 def grindCollectionEvent():
-    time.sleep(1)
     while (1): # start new games
         print('starting game')
         pyautogui.click(scaleCoords(200, 200)) # focus (anywhere on scrren that is not a button)
         time.sleep(0.2)
         pyautogui.click(scaleCoords(780, 950)) # play
-        time.sleep(0.75)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(75, 190)) # search button
         time.sleep(0.25)
         pyautogui.click(scaleCoords(740, 70)) # search bar
         time.sleep(0.25)
         pyautogui.typewrite('/CollectionEvent')
-        time.sleep(0.5)
+        time.sleep(0.25)
 
         while (1):
             map = ocr([300, 525], [650, 570])
@@ -592,7 +594,7 @@ def grindCollectionEvent():
                 print('Playing Workshop')
                 actions = copy.deepcopy(strats["workshop"]["actions"])
                 break
-            elif 'quad' in map:
+            elif 'qua' in map:
                 print('Playing Quad')
                 actions = copy.deepcopy(strats["quad"]["actions"])
                 break
@@ -608,7 +610,7 @@ def grindCollectionEvent():
                 print('Playing #Ouch')
                 actions = copy.deepcopy(strats["ouch"]["actions"])
                 break
-            elif 'valley' in map:
+            elif 'flooded' in map:
                 print('Playing Flooded Valley')
                 actions = copy.deepcopy(strats["valley"]["actions"])
                 break
@@ -624,11 +626,11 @@ def grindCollectionEvent():
             print('map not found, trying again')
         
         pyautogui.click(scaleCoords(480, 660)) # expert
-        time.sleep(0.75)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(570, 600)) # easy
-        time.sleep(0.75)
+        time.sleep(0.5)
         pyautogui.click(scaleCoords(580, 620)) # standard
-        time.sleep(6)
+        time.sleep(5)
         
         print('Initialising...')
         pyautogui.click(scaleCoords(1670, 1080)) # focus
@@ -643,15 +645,15 @@ def grindCollectionEvent():
             if 'insta' in raw.lower() or 'monkey' in raw.lower() or 'used' in raw.lower():
                 print('reset')
                 pyautogui.click(scaleCoords(900, 600)) # victory screen (dispel insta monkey notification if any)
-                time.sleep(2)
-                pyautogui.click(scaleCoords(900, 925)) # next
                 time.sleep(1)
+                pyautogui.click(scaleCoords(900, 925)) # next
+                time.sleep(0.5)
                 pyautogui.click(scaleCoords(650, 870)) # home
-                time.sleep(5)
+                time.sleep(3)
                 print('reset complete')
                 break
 
 print('ready...')
 time.sleep(2)
-game(strats["sanctuary"]["actions"])
-#grindCollectionEvent()
+#game(strats["sanctuary"]["actions"])
+grindCollectionEvent()
