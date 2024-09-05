@@ -60,7 +60,11 @@ strats = {
         "dart": [595, 540],
         "plane": [975, 655],
         "alc": [975, 585],
-    }
+    },
+    "workshop": {
+        "sniper1": [950, 520],
+        "sniper2": [885, 520]
+    },
 }
 strats["bloody"]["actions"] = [
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["bloody"]["sub1"]},
@@ -159,6 +163,24 @@ strats["dungeon"]["actions"] = [
     {'type': 'u', 'key': '2', 'pos': strats["dungeon"]['alc']},
     {'type': 'u', 'key': '2', 'pos': strats["dungeon"]['alc']},
 ]
+strats['workshop']["actions"] = [
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'start', 'cost': 0},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]}
+]
+
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -335,7 +357,7 @@ def grindCollectionEvent():
                 print('Playing Dark Dungeons')
                 actions = copy.deepcopy(strats["dungeon"]["actions"])
                 break
-            
+
             print('map not found, trying again')
         
         pyautogui.click(scaleCoords(480, 660)) # expert
@@ -368,5 +390,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-#game(strats["dungeon"]["actions"])
-grindCollectionEvent()
+game(strats["workshop"]["actions"])
+#grindCollectionEvent()
