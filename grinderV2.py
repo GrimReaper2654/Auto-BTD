@@ -69,6 +69,16 @@ strats = {
         "sniper1": [1365, 535],
         "sniper2": [1365, 620]
     },
+    "quad": {
+        "dart1": [1185, 590],
+        "dart2": [770, 305],
+        "dart3": [360, 590],
+        "dart4": [770, 845],
+        "sub1": [845, 470],
+        "sub2": [870, 545],
+        "alc1": [935, 490],
+        "alc2": [975, 440]
+    },
 }
 strats["bloody"]["actions"] = [
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["bloody"]["sub1"]},
@@ -171,37 +181,65 @@ strats['workshop']["actions"] = [
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["workshop"]["sniper1"]},
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["workshop"]["sniper2"]},
     {'type': 'start', 'cost': 0},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["workshop"]["sniper1"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["workshop"]["sniper2"]}
+    {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["workshop"]["sniper1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["workshop"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["workshop"]["sniper2"]}
 ]
 strats['castle']["actions"] = [
     {'type': 'start', 'cost': 0},
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["castle"]["sniper1"]},
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["castle"]["sniper2"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
-    {'type': 'u', 'key': '2', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
-    {'type': 'u', 'key': '3', 'cost': -1, 'pos': strats["castle"]["sniper1"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]},
-    {'type': 'u', 'key': '1', 'cost': -1, 'pos': strats["castle"]["sniper2"]}
+    {'type': 'u', 'key': '2', 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["castle"]["sniper1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["castle"]["sniper2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["castle"]["sniper2"]}
 ]
-
+strats['quad']["actions"] = [
+    {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["quad"]["dart1"]},
+    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart2"]},
+    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart3"]},
+    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart4"]},
+    {'type': 'start', 'cost': 0},
+    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["quad"]["sub1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub1"]},
+    {'type': 'p', 'key': data.alchemist, 'cost': 470, 'pos': strats["quad"]["alc1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["alc1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["alc1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["alc1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["alc1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["alc1"]},
+    {'type': 'p', 'key': data.alchemist, 'cost': 470, 'pos': strats["quad"]["alc2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["alc2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["alc2"]},
+    {'type': 'p', 'key': data.sub, 'cost': 260, 'pos': strats["quad"]["sub2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub1"]},
+]
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -386,6 +424,10 @@ def grindCollectionEvent():
                 print('Playing Workshop')
                 actions = copy.deepcopy(strats["workshop"]["actions"])
                 break
+            elif 'quad' in map:
+                print('Playing Quad')
+                actions = copy.deepcopy(strats["quad"]["actions"])
+                break
 
             print('map not found, trying again')
         
@@ -419,5 +461,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["castle"]["actions"])
+game(strats["quad"]["actions"])
 #grindCollectionEvent()
