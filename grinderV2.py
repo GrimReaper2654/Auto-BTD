@@ -109,12 +109,16 @@ strats = {
         "sniper1": [1490, 545],
         "sniper2": [1490, 645]
     },
+    "sanctuary": {
+        "boomer": [772, 303],
+        "sniper": [697, 987],
+    }
 }
 strats["bloody"]["actions"] = [
-    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["bloody"]["sub1"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["bloody"]["sub1"]},
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["bloody"]["dart1"]},
     {'type': 'start'},
-    {'type': 'p', 'key': data.sub, 'cost': 260, 'pos': strats["bloody"]["sub2"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["bloody"]["sub2"]},
     {'type': 'u', 'key': '3', 'pos': strats["bloody"]['sub1']},
     {'type': 'p', 'key': data.boat, 'cost': 325, 'pos': strats["bloody"]["boat1"]},
     {'type': 'u', 'key': '3', 'pos': strats["bloody"]["boat1"]},
@@ -140,7 +144,7 @@ strats["bloody"]["actions"] = [
 ]
 strats["ravine"]["actions"] = [
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["ravine"]["dart1"]},
-    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["ravine"]["dart2"]},
+    {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["ravine"]["dart2"]},
     {'type': 'start'},
     {'type': 'u', 'key': '2', 'pos': strats["ravine"]['dart1']},
     {'type': 'u', 'key': '2', 'pos': strats["ravine"]['dart1']},
@@ -180,8 +184,8 @@ strats["ravine"]["actions"] = [
 ]
 strats["dungeon"]["actions"] = [
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["dungeon"]["dart"]},
-    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["dungeon"]["sub"]},
-    {'type': 'p', 'key': data.boomerang, 'cost': 220, 'pos': strats["dungeon"]["boomer"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["dungeon"]["sub"]},
+    {'type': 'p', 'key': data.boomerang, 'cost': 0, 'pos': strats["dungeon"]["boomer"]},
     {'type': 'start'},
     {'type': 'u', 'key': '3', 'pos': strats["dungeon"]['boomer']},
     {'type': 'u', 'key': '3', 'pos': strats["dungeon"]['boomer']},
@@ -243,9 +247,9 @@ strats['castle']["actions"] = [
 ]
 strats['quad']["actions"] = [
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["quad"]["dart1"]},
-    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart2"]},
-    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart3"]},
-    {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart4"]},
+    {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["quad"]["dart2"]},
+    {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["quad"]["dart3"]},
+    {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["quad"]["dart4"]},
     {'type': 'start'},
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["quad"]["sub1"]},
     {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub1"]},
@@ -271,7 +275,7 @@ strats['quad']["actions"] = [
     {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub1"]},
 ]
 strats['trail']['actions'] = [
-    {'type': 'p', 'key': data.druid, 'cost': 340, 'pos': strats["trail"]["druid1"]},
+    {'type': 'p', 'key': data.druid, 'cost': 0, 'pos': strats["trail"]["druid1"]},
     {'type': 'start'},
     {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid1"]},
     {'type': 'u', 'key': '1', 'pos': strats["trail"]["druid1"]},
@@ -295,7 +299,7 @@ strats['trail']['actions'] = [
     {'type': 'u', 'key': '3', 'pos': strats["trail"]["heli"]},
 ]
 strats["muddy"]["actions"] = [
-    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["muddy"]["sub1"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["muddy"]["sub1"]},
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["muddy"]["dart1"]},
     {'type': 'start'},
     {'type': 'p', 'key': data.sub, 'cost': 260, 'pos': strats["muddy"]["sub2"]},
@@ -324,8 +328,8 @@ strats["muddy"]["actions"] = [
     {'type': 'u', 'key': '2', 'pos': strats["muddy"]["boat1"]},
 ]
 strats["ouch"]["actions"] = [
-    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["ouch"]["sub1"]},
-    {'type': 'p', 'key': data.sub, 'cost': 260, 'pos': strats["ouch"]["sub2"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["ouch"]["sub1"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["ouch"]["sub2"]},
     {'type': 'start'},
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["ouch"]["dart1"]},
     {'type': 'u', 'key': '3', 'pos': strats["ouch"]['sub2']},
@@ -354,8 +358,8 @@ strats["ouch"]["actions"] = [
 ]
 strats["valley"]["actions"] = [
     {'type': 'start'},
-    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["valley"]["sub"]},
-    {'type': 'p', 'key': data.boat, 'cost': 260, 'pos': strats["valley"]["boat"]},
+    {'type': 'p', 'key': data.sub, 'cost': 0, 'pos': strats["valley"]["sub"]},
+    {'type': 'p', 'key': data.boat, 'cost': 0, 'pos': strats["valley"]["boat"]},
     {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
     {'type': 'u', 'key': '3', 'pos': strats["valley"]['sub']},
     {'type': 'u', 'key': '1', 'pos': strats["valley"]['sub']},
@@ -385,6 +389,23 @@ strats["infernal"]["actions"] = [
     {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]},
     {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]},
     {'type': 'u', 'key': '1', 'pos': strats["infernal"]["sniper2"]}
+]
+strats["sanctuary"]["actions"] = [
+    {'type': 'p', 'key': data.boomerang, 'cost': 0, 'pos': strats["sanctuary"]["boomer"]},
+    {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'start'},
+    {'type': 'u', 'key': '3', 'pos': strats["sanctuary"]["boomer"]},
+    {'type': 'u', 'key': '3', 'pos': strats["sanctuary"]["boomer"]},
+    {'type': 'u', 'key': '1', 'pos': strats["sanctuary"]["boomer"]},
+    {'type': 'u', 'key': '1', 'pos': strats["sanctuary"]["boomer"]},
+    {'type': 'u', 'key': '1', 'pos': strats["sanctuary"]["boomer"]},
+    {'type': 'u', 'key': '2', 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'u', 'key': '2', 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'u', 'key': '3', 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'u', 'key': '3', 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'u', 'key': '3', 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'u', 'key': '3', 'pos': strats["sanctuary"]["sniper"]},
+    {'type': 'u', 'key': '1', 'pos': strats["sanctuary"]["boomer"]},
 ]
 
 
@@ -595,8 +616,10 @@ def grindCollectionEvent():
                 print('Playing Infernal')
                 actions = copy.deepcopy(strats["infernal"]["actions"])
                 break
-
-
+            elif 'sanctuary' in map:
+                print('Playing Sanctuary')
+                actions = copy.deepcopy(strats["sanctuary"]["actions"])
+                break
 
             print('map not found, trying again')
         
@@ -630,5 +653,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["infernal"]["actions"])
+game(strats["sanctuary"]["actions"])
 #grindCollectionEvent()
