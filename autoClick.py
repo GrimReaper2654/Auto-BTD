@@ -28,7 +28,6 @@ class keybinds(): # change based on your own keybinds
             "lowerRight": [891,824]
         }
 
-
 data = keybinds()
 
 def placeTower(pos, key):
@@ -465,7 +464,7 @@ def infernalEasy():
             {'type': 'u', 'key': '2', 'cost': 270, 'pos': alc},
             {'type': 'u', 'key': '2', 'cost': 515, 'pos': alc},
             {'type': 'u', 'key': '3', 'cost': 2460, 'pos': boomer},
-            ]
+        ]
         print('Initialising...')
         time.sleep(0.5)
         pyautogui.click(scaleCoords(400, 500))
@@ -523,3 +522,4 @@ def infernalEasy():
                 time.sleep(1)
 
 darkCastleEasy()
+
