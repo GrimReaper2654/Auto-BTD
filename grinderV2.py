@@ -86,6 +86,13 @@ strats = {
         "druid2": [150, 420],
         "druid3": [1295, 690],
         "heli": [175, 1000]
+    },
+    "muddy": {
+        "sub1": [290, 470],
+        "sub2": [745, 650],
+        "dart1": [430, 580],
+        "boat1": [1220, 500],
+        "boat2": [580, 710],
     }
 }
 strats["bloody"]["actions"] = [
@@ -272,7 +279,35 @@ strats['trail']['actions'] = [
     {'type': 'u', 'key': '3', 'pos': strats["trail"]["heli"]},
     {'type': 'u', 'key': '3', 'pos': strats["trail"]["heli"]},
 ]
-
+strats["muddy"]["actions"] = [
+    {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["muddy"]["sub1"]},
+    {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["muddy"]["dart1"]},
+    {'type': 'start'},
+    {'type': 'p', 'key': data.sub, 'cost': 260, 'pos': strats["muddy"]["sub2"]},
+    {'type': 'p', 'key': data.boat, 'cost': 325, 'pos': strats["muddy"]["boat1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]["boat1"]},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub2']},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub1']},
+    {'type': 'u', 'key': '1', 'pos': strats["muddy"]['sub1']},
+    {'type': 'u', 'key': '1', 'pos': strats["muddy"]['sub1']},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub1']},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub2']},
+    {'type': 'u', 'key': '1', 'pos': strats["muddy"]['sub2']},
+    {'type': 'u', 'key': '1', 'pos': strats["muddy"]['sub2']},
+    {'type': 'p', 'key': data.boat, 'cost': 325, 'pos': strats["muddy"]["boat2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]["boat2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]["boat2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]["boat1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["muddy"]["boat1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["muddy"]["boat1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["muddy"]["boat2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["muddy"]["boat2"]},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub2']},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub1']},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub2']},
+    {'type': 'u', 'key': '3', 'pos': strats["muddy"]['sub1']},
+    {'type': 'u', 'key': '2', 'pos': strats["muddy"]["boat1"]},
+]
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -465,6 +500,11 @@ def grindCollectionEvent():
                 print('Playing Galacier Trail')
                 actions = copy.deepcopy(strats["trail"]["actions"])
                 break
+            elif 'muddy' in map:
+                print('Playing Muddy Puddles')
+                actions = copy.deepcopy(strats["muddy"]["actions"])
+                break
+
 
             print('map not found, trying again')
         
@@ -498,5 +538,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["trail"]["actions"])
+game(strats["muddy"]["actions"])
 #grindCollectionEvent()
