@@ -26,6 +26,8 @@ class keybinds(): # change based on your own keybinds
         self.dart = 'l'
         self.boat = "c"
         self.ace = "p"
+        self.druid = "j"
+        self.heli= "h"
 
         self.display = { # set your btd6 screen position with 2 corner coordinates 
             # side by side
@@ -79,11 +81,17 @@ strats = {
         "alc1": [935, 490],
         "alc2": [975, 440]
     },
+    "trail": {
+        "druid1": [1085, 597],
+        "druid2": [150, 420],
+        "druid3": [1295, 690],
+        "heli": [175, 1000]
+    }
 }
 strats["bloody"]["actions"] = [
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["bloody"]["sub1"]},
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["bloody"]["dart1"]},
-    {'type': 'start', 'cost': 0},
+    {'type': 'start'},
     {'type': 'p', 'key': data.sub, 'cost': 260, 'pos': strats["bloody"]["sub2"]},
     {'type': 'u', 'key': '3', 'pos': strats["bloody"]['sub1']},
     {'type': 'p', 'key': data.boat, 'cost': 325, 'pos': strats["bloody"]["boat1"]},
@@ -111,7 +119,7 @@ strats["bloody"]["actions"] = [
 strats["ravine"]["actions"] = [
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["ravine"]["dart1"]},
     {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["ravine"]["dart2"]},
-    {'type': 'start', 'cost': 0},
+    {'type': 'start'},
     {'type': 'u', 'key': '2', 'pos': strats["ravine"]['dart1']},
     {'type': 'u', 'key': '2', 'pos': strats["ravine"]['dart1']},
     {'type': 'u', 'key': '2', 'pos': strats["ravine"]['dart2']},
@@ -152,7 +160,7 @@ strats["dungeon"]["actions"] = [
     {'type': 'p', 'key': data.dart, 'cost': 0, 'pos': strats["dungeon"]["dart"]},
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["dungeon"]["sub"]},
     {'type': 'p', 'key': data.boomerang, 'cost': 220, 'pos': strats["dungeon"]["boomer"]},
-    {'type': 'start', 'cost': 0},
+    {'type': 'start'},
     {'type': 'u', 'key': '3', 'pos': strats["dungeon"]['boomer']},
     {'type': 'u', 'key': '3', 'pos': strats["dungeon"]['boomer']},
     {'type': 'u', 'key': '2', 'pos': strats["dungeon"]['dart']},
@@ -180,7 +188,7 @@ strats["dungeon"]["actions"] = [
 strats['workshop']["actions"] = [
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["workshop"]["sniper1"]},
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["workshop"]["sniper2"]},
-    {'type': 'start', 'cost': 0},
+    {'type': 'start'},
     {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper1"]},
     {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper1"]},
     {'type': 'u', 'key': '2', 'pos': strats["workshop"]["sniper2"]},
@@ -195,7 +203,7 @@ strats['workshop']["actions"] = [
     {'type': 'u', 'key': '1', 'pos': strats["workshop"]["sniper2"]}
 ]
 strats['castle']["actions"] = [
-    {'type': 'start', 'cost': 0},
+    {'type': 'start'},
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["castle"]["sniper1"]},
     {'type': 'p', 'key': data.sniper, 'cost': 0, 'pos': strats["castle"]["sniper2"]},
     {'type': 'u', 'key': '2', 'pos': strats["castle"]["sniper1"]},
@@ -216,7 +224,7 @@ strats['quad']["actions"] = [
     {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart2"]},
     {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart3"]},
     {'type': 'p', 'key': data.dart, 'cost': 170, 'pos': strats["quad"]["dart4"]},
-    {'type': 'start', 'cost': 0},
+    {'type': 'start'},
     {'type': 'p', 'key': data.sub, 'cost': 170, 'pos': strats["quad"]["sub1"]},
     {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub1"]},
     {'type': 'u', 'key': '1', 'pos': strats["quad"]["sub1"]},
@@ -240,6 +248,31 @@ strats['quad']["actions"] = [
     {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub2"]},
     {'type': 'u', 'key': '3', 'pos': strats["quad"]["sub1"]},
 ]
+strats['trail']['actions'] = [
+    {'type': 'p', 'key': data.druid, 'cost': 340, 'pos': strats["trail"]["druid1"]},
+    {'type': 'start'},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid1"]},
+    {'type': 'u', 'key': '1', 'pos': strats["trail"]["druid1"]},
+    {'type': 'p', 'key': data.druid, 'cost': 340, 'pos': strats["trail"]["druid2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid2"]},
+    {'type': 'u', 'key': '1', 'pos': strats["trail"]["druid2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid1"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid2"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid2"]},
+    {'type': 'p', 'key': data.druid, 'cost': 340, 'pos': strats["trail"]["druid3"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid3"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid3"]},
+    {'type': 'u', 'key': '2', 'pos': strats["trail"]["druid3"]},
+    {'type': 'u', 'key': '1', 'pos': strats["trail"]["druid3"]},
+    {'type': 'p', 'key': data.heli, 'cost': 845, 'pos': strats["trail"]["heli"]},
+    {'type': 'u', 'key': '1', 'pos': strats["trail"]["heli"]},
+    {'type': 'u', 'key': '1', 'pos': strats["trail"]["heli"]},
+    {'type': 'u', 'key': '3', 'pos': strats["trail"]["heli"]},
+    {'type': 'u', 'key': '3', 'pos': strats["trail"]["heli"]},
+    {'type': 'u', 'key': '3', 'pos': strats["trail"]["heli"]},
+]
+
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -428,6 +461,10 @@ def grindCollectionEvent():
                 print('Playing Quad')
                 actions = copy.deepcopy(strats["quad"]["actions"])
                 break
+            elif 'trail' in map:
+                print('Playing Galacier Trail')
+                actions = copy.deepcopy(strats["trail"]["actions"])
+                break
 
             print('map not found, trying again')
         
@@ -448,7 +485,7 @@ def grindCollectionEvent():
         while 1:
             handleLevelUp()
             raw = ocr([540, 280], [1200, 900])
-            if 'insta' in raw.lower():
+            if 'insta' in raw.lower() or 'monkey' in raw.lower() or 'used' in raw.lower():
                 print('reset')
                 pyautogui.click(scaleCoords(900, 600)) # victory screen (dispel insta monkey notification if any)
                 time.sleep(2)
@@ -461,5 +498,5 @@ def grindCollectionEvent():
 
 print('ready...')
 time.sleep(2)
-game(strats["quad"]["actions"])
+game(strats["trail"]["actions"])
 #grindCollectionEvent()
