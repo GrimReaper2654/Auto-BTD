@@ -523,9 +523,9 @@ def game(actions):
                 time.sleep(0.5)
             else: # place towers
                 # get money
+                cash = ''
                 if (action['cost'] > 0):
                     raw = ocr([335, 60], [450, 100])
-                    cash = ''
                     for char in raw:
                         if char.isnumeric():
                             cash += char
@@ -533,16 +533,15 @@ def game(actions):
                         cash = int(cash)
                     else:
                         print('failed to detect money')
-                    cash = 0
+                        cash = 0
                 else:
                     cash = 0
-
+                print('cash', cash, 'need', action['cost'])
                 if (cash >= action['cost']):
                     if action['type'] == 'p':
                         pyautogui.typewrite(action['key'])
                         pyautogui.click(scaleCoords(action['pos']))
                         actions.pop(0)
-                        time.sleep(0.5)
 
 # Expert Easy collection event grinder
 # • full automatic
