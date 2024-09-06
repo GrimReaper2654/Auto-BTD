@@ -4,6 +4,8 @@ import math
 import copy
 import pytesseract
 from PIL import Image, ImageOps
+import socket
+import subprocess
 
 # update according to your installation
 pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract'
@@ -408,6 +410,13 @@ strats["sanctuary"]["actions"] = [
     {'type': 'u', 'key': '1', 'pos': strats["sanctuary"]["boomer"]},
 ]
 
+def check_internet(host="8.8.8.8", port=53, timeout=3):
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
+        return True
+    except socket.error:
+        return False
 
 def ocr(pos1, pos2):
     upperLeftX, upperLeftY = scaleCoords(pos1)
@@ -652,7 +661,12 @@ def grindCollectionEvent():
                 print('reset complete')
                 break
 
-print('ready...')
-time.sleep(2)
-#game(strats["sanctuary"]["actions"])
-grindCollectionEvent()
+if check_internet():
+    print("Connected to the Internet")
+    print("Dsiable internet first, very important")
+else:
+    print("No Internet connection, good")
+    print('ready...')
+    time.sleep(2)
+    #game(strats["sanctuary"]["actions"])
+    grindCollectionEvent()
